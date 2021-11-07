@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
     <div class="w-100">
       <app-navbar></app-navbar>
     </div>
-
-    <router-outlet></router-outlet>
+    <div class="bg-light">
+      <router-outlet></router-outlet>
+    </div>
   `,
   styles: []
 })

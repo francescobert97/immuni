@@ -1,7 +1,8 @@
-import { IHome } from "./home.models"
+import {  IHomeE } from "./home.models"
 
-export const HOMECONTENT:IHome[] = [
+export const HOMECONTENT:any[] = [
     {
+      showLanguage: true,
       startTogetherContent: {
         img: 'https://www.immuni.italia.it/hero-illustration.120b1e94f69a23426302.png',
         title: 'Ripartiamo insieme',
@@ -86,6 +87,7 @@ export const HOMECONTENT:IHome[] = [
       }
     },
     {
+        showLanguage: false,
         startTogetherContent: {
           img: 'https://www.immuni.italia.it/hero-illustration.120b1e94f69a23426302.png',
           title: 'Let’s start afresh together',
@@ -170,6 +172,7 @@ export const HOMECONTENT:IHome[] = [
         }
       },
       {
+        showLanguage: false,
         startTogetherContent: {
           img: 'https://www.immuni.italia.it/hero-illustration.120b1e94f69a23426302.png',
           title: 'Starten wir gemeinsam neu durch',
@@ -254,6 +257,7 @@ export const HOMECONTENT:IHome[] = [
         }
       },
       {
+        showLanguage: false,
         startTogetherContent: {
           img: 'https://www.immuni.italia.it/hero-illustration.120b1e94f69a23426302.png',
           title: 'Ensemble, contribuons à un retour à la normale',
@@ -338,6 +342,7 @@ export const HOMECONTENT:IHome[] = [
         }
       },
       {
+        showLanguage: false,
         startTogetherContent: {
           img: 'https://www.immuni.italia.it/hero-illustration.120b1e94f69a23426302.png',
           title: 'Salgamos adelante juntos',
@@ -422,3 +427,5 @@ export const HOMECONTENT:IHome[] = [
         }
       }
   ]
+
+

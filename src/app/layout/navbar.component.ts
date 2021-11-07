@@ -49,7 +49,7 @@ export interface ILanguage {
             <div *ngIf="content.showLanguage" (click)="languageMenuVisible = !languageMenuVisible"  class=" mt-2 col-2 d-flex justify-content-start">
                 <p  *ngIf="languageMenuVisible === false; else currentLanguageActive" class="ms-3">{{languageMenuClose}}<span class="ms-1">v</span></p>
             </div>
-
+              
             <ng-template #currentLanguageActive>
               <ul [class.menuVisible]="languageMenuVisible" class="language-list">
                 <li (click)="updateLanguage(language[0])">{{content.languageMenu?.italian}}</li>
@@ -65,7 +65,7 @@ export interface ILanguage {
   styles: [
     `
     nav {
-      position: relative;
+      position: fixed;
       font-size: 1.1em;
       font-weight: bold;
       color: #5751ff;

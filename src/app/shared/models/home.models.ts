@@ -1,5 +1,5 @@
 
-export interface IStartTogether {
+/*export interface IStartTogether {
     img: string,
     title: string,
     paragraph: string
@@ -73,6 +73,7 @@ export interface IStartTogether {
   }
   
   export interface IHome {
+    showLanguage: boolean,
     startTogetherContent: IStartTogether,
     protectYourselfContent: IProtectYourself,
     newsContent: INews,
@@ -82,4 +83,44 @@ export interface IStartTogether {
     safetyContent: ISafety,
     reportPositivityContent: IReport,
     wantToKnowMoreContent: IWantMore 
+  }*/
+
+
+  export interface IHomeE {
+    showLanguage: boolean,
+    contentItalian:IContent[]
+  }
+
+  export interface IContent {
+    style: string,
+    title: string,
+    subtitle: string,
+    paragraph: IParagraph[],
+    link?: string,
+    img?: IImage[],
+    backgroundColor?: string,
+    buttonLabel?: string,
+    buttonColor?: string,
+    card?: ICard[]
+  }
+
+  export interface ICard {
+    img: string,
+    paragraph: string
+  }
+
+  export interface IImage {
+    image: string,
+    position?: string
+    width?: number,
+    height?: number,
+    y?: number,
+    x?: number
+  }
+
+  export interface IParagraph {
+    paragraph: string,
+    alignSelf?: string,
+    flexGrow?: number
+
   }
