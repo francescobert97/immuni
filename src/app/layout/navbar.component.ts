@@ -39,7 +39,7 @@ export interface ILanguage {
       <ng-container  *ngFor="let content of language" class="d-flex justify-content-between">
             <div id="language-link" *ngIf="content.showLanguage" class=" ms-5 col-7 d-flex justify-content-between align-items-center">
               <a href="javascript:void(0)" routerLink="/home">{{content.linkContent?.home}}</a>
-              <a href="javascript:void(0)" routerLink="/documentation">{{content.linkContent?.documentation}}</a>
+              <a href="https://github.com/immuni-app/immuni-documentation">{{content.linkContent?.documentation}}</a>
               <a href="javascript:void(0)" routerLink="/graphics">{{content.linkContent?.graphics}}</a>
               <a href="javascript:void(0)" routerLink="/number">{{content.linkContent?.numbers}}</a>
               <a href="javascript:void(0)" routerLink="/question">{{content.linkContent?.faq}}</a>

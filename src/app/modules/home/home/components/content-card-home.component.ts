@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IContent } from 'src/app/shared/models/home.models';
+import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
 
 
 @Component({
   selector: 'app-content-card-home',
   template: `
-  <div class="{{contenuto.style}}">
-
+  
+    <div class="{{homeContents?.style}}">
       <div id="card-content" class="">
         <div class="d-flex justify-content-center">
-          <div *ngFor="let img of contenuto.img">
+          <div *ngFor="let img of homeContents?.imgs">
             <img   [ngStyle]="{
               'width.rem': img.width,
               'height.rem': img.height,
@@ -21,11 +21,11 @@ import { IContent } from 'src/app/shared/models/home.models';
         </div>
 
         <div class="">
-          <h2 *ngIf="contenuto.title">{{contenuto?.title}}</h2>
-          <h4 class="my-5">{{contenuto?.subtitle}}</h4>
-          <button class="btn " *ngIf="contenuto.buttonLabel">{{contenuto.buttonLabel}}</button>
+          <h2 *ngIf="homeContents?.title">{{homeContents?.title}}</h2>
+          <h4 class="my-5">{{homeContents?.subtitle}}</h4>
+          <button class="btn " *ngIf="homeContents?.buttonLabel">{{homeContents?.buttonLabel}}</button>
 
-          <ng-container *ngFor="let paragraph of contenuto.paragraph">
+          <ng-container *ngFor="let paragraph of homeContents?.paragraphs">
             <div class="d-flex justify-content-center my-1">
               <p class="text-center"
               [ngStyle]="{
@@ -38,20 +38,20 @@ import { IContent } from 'src/app/shared/models/home.models';
             </div>
           </ng-container>
 
-          <a href="" *ngIf="contenuto.link">{{contenuto?.link}}</a>
+          <a href="" *ngIf="homeContents?.link">{{homeContents?.link}}</a>
         </div>
       </div>
 
-      <div *ngIf="contenuto.card" class="d-flex justify-content-center">
-        <ng-container *ngFor="let card of contenuto.card">
+      <div *ngIf="homeContents?.cards" class="d-flex justify-content-center">
+        <ng-container *ngFor="let card of homeContents?.cards">
           <div class=" m-3 d-flex flex-column justify-content-center align-items-center" id="card-comunication">
             <img src="{{card.img}}" alt="">
             <p class="text-center">{{card.paragraph}}</p>
           </div>
         </ng-container>
       </div>
-
   </div>
+
     
   `,
   styles: [
@@ -82,7 +82,7 @@ import { IContent } from 'src/app/shared/models/home.models';
           width: 50.9%;
         }
       }
-      
+
     }
 
     .protectYourself {
@@ -311,7 +311,7 @@ import { IContent } from 'src/app/shared/models/home.models';
   ]
 })
 export class ContentCardHomeComponent implements OnInit {
-  @Input() contenuto!:IContent;
+  @Input() homeContents!:IContent;
   constructor() { }
 
   ngOnInit(): void {

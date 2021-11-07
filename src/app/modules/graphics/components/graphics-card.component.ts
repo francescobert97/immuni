@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-graphics',
+  selector: 'app-graphics-card',
   template: `
-    <div>
-      <app-graphics-card ></app-graphics-card>
-    </div>
+    <p>
+      graphics-card works!
+    </p>
   `,
   styles: [
   ]
 })
-export class GraphicsComponent implements OnInit {
+export class GraphicsCardComponent implements OnInit {
 
   constructor() { }
 

@@ -8,56 +8,59 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 @Component({
   selector: 'app-home',
   template: `
-  <ng-container *ngFor="let content of contenuto; let idx = index">
+  <ng-container *ngFor="let language of languages; let idx = index">
 
-    <div *ngIf="content.showLanguage">
+    <div *ngIf="language.showLanguage">
+      
+      <div *ngFor="let content of language.contents">
+        <div>
+          <app-content-card-home [homeContents]="content.home[0]"></app-content-card-home>
+        </div>
 
-      <div>
-        <app-content-card-home [contenuto]="content.contentItalian[0]"></app-content-card-home>
+        <div>
+          <app-content-card-home [homeContents]="content.home[1]"></app-content-card-home>
+        </div>
+
+        <div id="background-content1">
+          <app-content-card-home [homeContents]="content.home[2]"></app-content-card-home>
+        </div>
+
+        <div id="background-content2">
+          <app-content-card-home [homeContents]="content.home[3]"></app-content-card-home>
+        </div>
+
+        <div class="position-relative">
+          <svg id="section-divider" class="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1440 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.1" d="M0 197V144.5C0 144.5 297 0 720 0C1143 0 1440 147 1440 147V197H0Z" fill="#5751FF"></path>
+            <path d="M720 50C1143 50 1440 197 1440 197H0C0 197 297 50 720 50Z" fill="#5751FF"></path>
+          </svg>
+
+          <app-content-card-home [homeContents]="content.home[4]"></app-content-card-home>
+
+        </div>
+
+        <div class="position-relative">
+          <app-content-card-home [homeContents]="content.home[5]"></app-content-card-home>
+
+          <svg id="section-divider-bottom" class="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1440 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.1" d="M0 0V52.5C0 52.5 297 197 720 197C1143 197 1440 50 1440 50V0H0Z" fill="#5751FF"></path>
+            <path d="M720 147C1143 147 1440 0 1440 0H0C0 0 297 147 720 147Z" fill="#5751FF"></path>
+          </svg>
+        </div>
+
+        <div>
+          <app-content-card-home [homeContents]="content.home[6]"></app-content-card-home>
+        </div>
+
+        <div>
+          <app-content-card-home [homeContents]="content.home[7]"></app-content-card-home>
+        </div>
+
+        <div>
+          <app-content-card-home [homeContents]="content.home[8]"></app-content-card-home>
+        </div>
       </div>
 
-      <div>
-        <app-content-card-home [contenuto]="content.contentItalian[1]"></app-content-card-home>
-      </div>
-
-      <div id="background-content1">
-        <app-content-card-home [contenuto]="content.contentItalian[2]"></app-content-card-home>
-      </div>
-
-      <div id="background-content2">
-        <app-content-card-home [contenuto]="content.contentItalian[3]"></app-content-card-home>
-      </div>
-
-      <div class="position-relative">
-        <svg id="section-divider" class="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1440 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.1" d="M0 197V144.5C0 144.5 297 0 720 0C1143 0 1440 147 1440 147V197H0Z" fill="#5751FF"></path>
-          <path d="M720 50C1143 50 1440 197 1440 197H0C0 197 297 50 720 50Z" fill="#5751FF"></path>
-        </svg>
-
-        <app-content-card-home [contenuto]="content.contentItalian[4]"></app-content-card-home>
-
-      </div>
-
-      <div class="position-relative">
-        <app-content-card-home [contenuto]="content.contentItalian[5]"></app-content-card-home>
-
-        <svg id="section-divider-bottom" class="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1440 197" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.1" d="M0 0V52.5C0 52.5 297 197 720 197C1143 197 1440 50 1440 50V0H0Z" fill="#5751FF"></path>
-          <path d="M720 147C1143 147 1440 0 1440 0H0C0 0 297 147 720 147Z" fill="#5751FF"></path>
-        </svg>
-      </div>
-
-      <div>
-        <app-content-card-home [contenuto]="content.contentItalian[6]"></app-content-card-home>
-      </div>
-
-      <div>
-        <app-content-card-home [contenuto]="content.contentItalian[7]"></app-content-card-home>
-      </div>
-
-      <div>
-        <app-content-card-home [contenuto]="content.contentItalian[8]"></app-content-card-home>
-      </div>
     </div>
 
   </ng-container>
@@ -98,13 +101,12 @@ import { LanguageService } from 'src/app/shared/services/language.service';
   ]
 })
 export class HomeComponent implements OnInit {
-  contenuto:IHomeE[] = HOMECONTENTI;
+  languages:IHomeE[] = HOMECONTENTI;
   
   constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
-    this.languageService.languagesUpdate$.subscribe(item => { this.contenuto = item
-    console.log(this.contenuto)
+    this.languageService.languagesUpdate$.subscribe(item => { this.languages = item
     });
   }
 
