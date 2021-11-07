@@ -85,8 +85,11 @@
     wantToKnowMoreContent: IWantMore 
   }*/
 
+import { LanguageType } from "../enums.enum";
+
 
   export interface IHomeE {
+    languageType: LanguageType,
     showLanguage: boolean,
     contentItalian:IContent[]
   }

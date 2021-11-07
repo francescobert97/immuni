@@ -3,28 +3,29 @@ import { ILanguage } from 'src/app/layout/navbar.component';
 import { HOMECONTENT } from 'src/app/shared/models/mock-home';
 import { IHomeE } from 'src/app/shared/models/home.models';
 import { HOMECONTENTI } from 'src/app/shared/models/mock-home2';
+import { LanguageService } from 'src/app/shared/services/language.service';
 
 @Component({
   selector: 'app-home',
   template: `
-  <ng-container >
+  <ng-container *ngFor="let content of contenuto; let idx = index">
 
-    <div *ngIf="contenuto[0].showLanguage">
+    <div *ngIf="content.showLanguage">
 
       <div>
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[0]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[0]"></app-content-card-home>
       </div>
 
       <div>
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[1]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[1]"></app-content-card-home>
       </div>
 
       <div id="background-content1">
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[2]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[2]"></app-content-card-home>
       </div>
 
       <div id="background-content2">
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[3]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[3]"></app-content-card-home>
       </div>
 
       <div class="position-relative">
@@ -33,12 +34,12 @@ import { HOMECONTENTI } from 'src/app/shared/models/mock-home2';
           <path d="M720 50C1143 50 1440 197 1440 197H0C0 197 297 50 720 50Z" fill="#5751FF"></path>
         </svg>
 
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[4]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[4]"></app-content-card-home>
 
       </div>
 
       <div class="position-relative">
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[5]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[5]"></app-content-card-home>
 
         <svg id="section-divider-bottom" class="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1440 197" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.1" d="M0 0V52.5C0 52.5 297 197 720 197C1143 197 1440 50 1440 50V0H0Z" fill="#5751FF"></path>
@@ -47,19 +48,20 @@ import { HOMECONTENTI } from 'src/app/shared/models/mock-home2';
       </div>
 
       <div>
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[6]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[6]"></app-content-card-home>
       </div>
 
       <div>
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[7]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[7]"></app-content-card-home>
       </div>
 
       <div>
-        <app-content-card-home [contenuto]="contenuto[0].contentItalian[8]"></app-content-card-home>
+        <app-content-card-home [contenuto]="content.contentItalian[8]"></app-content-card-home>
       </div>
     </div>
 
   </ng-container>
+  
   `,
   styles: [
     `
@@ -98,9 +100,12 @@ import { HOMECONTENTI } from 'src/app/shared/models/mock-home2';
 export class HomeComponent implements OnInit {
   contenuto:IHomeE[] = HOMECONTENTI;
   
-  constructor() { }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
+    this.languageService.languagesUpdate$.subscribe(item => { this.contenuto = item
+    console.log(this.contenuto)
+    });
   }
 
 }

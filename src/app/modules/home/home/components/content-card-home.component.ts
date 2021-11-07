@@ -59,11 +59,7 @@ import { IContent } from 'src/app/shared/models/home.models';
     .startTogether {
       display: flex;
       flex-direction: column;
-      div:nth-of-type(2) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+
       img {
         width: 100%;
       }
@@ -76,6 +72,17 @@ import { IContent } from 'src/app/shared/models/home.models';
       p {
         font-size: 1.4em;
       }
+      
+      div:nth-of-type(2) {
+      display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        p {
+          width: 50.9%;
+        }
+      }
+      
     }
 
     .protectYourself {

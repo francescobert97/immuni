@@ -256,7 +256,9 @@ export class NavbarComponent implements OnInit {
     this.language.forEach((value, index) => {
           
       if(findLanguage === value) {
-        value.showLanguage = true
+        value.showLanguage = true;
+        
+        this.languageService.updateLanguage(value.languageType);
       } 
 
       if(value !== findLanguage) {
