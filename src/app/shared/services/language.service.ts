@@ -10,7 +10,7 @@ import { HOMECONTENTI } from '../models/mock-home2';
 })
 export class LanguageService {
   public contents:IHomeE[] = HOMECONTENTI
-  public languages$ = new Subject<IHomeE[]>();
+  private languages$ = new Subject<IHomeE[]>();
   public languagesUpdate$ = this.languages$.asObservable();
 
   constructor() { }

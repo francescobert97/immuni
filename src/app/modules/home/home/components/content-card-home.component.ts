@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
+import { IHome } from 'src/app/shared/models/home.models';
+
 
 
 @Component({
@@ -251,6 +252,7 @@ import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
     }
 
     .reportPositivity {
+      padding: 0 10rem 0 10rem;
       div:first-child {
         display: flex;
         justify-content: center;
@@ -261,8 +263,9 @@ import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
           align-items: center;
 
           button {
-            background:#5751ff;
+            background: #5751ff;
             border-radius: 20px;
+            color: white;
           }
         }
       
@@ -279,6 +282,8 @@ import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
 
           h2 {
             font-size: 3em;
+            margin-top: 6rem;
+            max-width: 400px;
           }
 
           button {
@@ -287,6 +292,8 @@ import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
             background: #5751ff;
             border-radius: 20px;
             box-shadow: 0 0 20px rgb(105 147 255 / 30%);
+            margin-top: -2rem;
+            color:white;
           }
         }
 
@@ -311,7 +318,7 @@ import { IContent, IContentLanguage } from 'src/app/shared/models/home.models';
   ]
 })
 export class ContentCardHomeComponent implements OnInit {
-  @Input() homeContents!:IContent;
+  @Input() homeContents!:IHome;
   constructor() { }
 
   ngOnInit(): void {

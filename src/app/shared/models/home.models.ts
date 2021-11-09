@@ -1,13 +1,14 @@
 import { LanguageType } from "../enums.enum";
+import { IFaq } from "./question.models";
 
 
   export interface IHomeE {
     languageType: LanguageType,
     showLanguage: boolean,
-    contents:IContentLanguage[]
+    contents:IContentLanguage
   }
 
-  export interface IContent {
+  export interface IHome {
     style: string,
     title: string,
     subtitle: string,
@@ -20,12 +21,19 @@ import { LanguageType } from "../enums.enum";
     cards?: ICard[]
   }
 
+  export interface IGraphics {
+    title: string,
+    subtitle: string,
+    buttonLabel: string,
+    img: string
+  }
+
   export interface IContentLanguage {
-    home: IContent[],
-    graphics: IContent[],
-    number: IContent[],
-    faq: IContent[],
-    download: IContent[]
+    home: IHome[],
+    graphics: IGraphics,
+    number: IGraphics[],
+    faq: IFaq,
+    download: IGraphics[]
   }
 
   export interface ICard {

@@ -31,8 +31,8 @@ export interface ILanguage {
 @Component({
   selector: 'app-navbar',
   template: `
-    <nav class=" w-100 d-flex justify-content-between  align-items-center py-5">
-      <div class="d-flex ms-5 col-3 ">
+    <nav class=" w-100 d-flex justify-content-between  align-items-center p-4">
+      <div class="d-flex justify-content-start ms-2 col-3 ">
         <img src="https://www.immuni.italia.it/c1f0755fa13caaa715eba8b04e4b774a.svg" alt="">
       </div>
 
@@ -46,7 +46,7 @@ export interface ILanguage {
               <button class="text-light btn px-5" routerLink="/download">{{content.linkContent.download}}</button>
             </div>
 
-            <div *ngIf="content.showLanguage" (click)="languageMenuVisible = !languageMenuVisible"  class=" mt-2 col-2 d-flex justify-content-start">
+            <div *ngIf="content.showLanguage" (click)="languageMenuVisible = !languageMenuVisible"  class=" mt-2 ms-3 col-2 d-flex justify-content-start">
                 <p  *ngIf="languageMenuVisible === false; else currentLanguageActive" class="ms-3">{{languageMenuClose}}<span class="ms-1">v</span></p>
             </div>
               
@@ -64,7 +64,13 @@ export interface ILanguage {
   `,
   styles: [
     `
+    .active {
+      background:black;
+    }
     nav {
+      z-index: 9999;
+      background: #f6f9ff;
+      opacity: 0.85;
       position: fixed;
       font-size: 1.1em;
       font-weight: bold;
@@ -87,7 +93,7 @@ export interface ILanguage {
 
       div:first-of-type {
         img {
-          width: 55%;
+          width: 57%;
         }
       }
 
@@ -103,7 +109,7 @@ export interface ILanguage {
           position: absolute;
           list-style-type: none;
           top: 38%;
-          background: black;
+          background: white;
           padding: 0 1.5rem;
           margin-left: 1rem;
           border-radius: 30px;

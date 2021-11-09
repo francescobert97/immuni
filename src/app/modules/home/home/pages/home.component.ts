@@ -12,21 +12,21 @@ import { LanguageService } from 'src/app/shared/services/language.service';
 
     <div *ngIf="language.showLanguage">
       
-      <div *ngFor="let content of language.contents">
+      <div>
         <div>
-          <app-content-card-home [homeContents]="content.home[0]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[0]"></app-content-card-home>
         </div>
 
         <div>
-          <app-content-card-home [homeContents]="content.home[1]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[1]"></app-content-card-home>
         </div>
 
         <div id="background-content1">
-          <app-content-card-home [homeContents]="content.home[2]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[2]"></app-content-card-home>
         </div>
 
         <div id="background-content2">
-          <app-content-card-home [homeContents]="content.home[3]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[3]"></app-content-card-home>
         </div>
 
         <div class="position-relative">
@@ -35,12 +35,12 @@ import { LanguageService } from 'src/app/shared/services/language.service';
             <path d="M720 50C1143 50 1440 197 1440 197H0C0 197 297 50 720 50Z" fill="#5751FF"></path>
           </svg>
 
-          <app-content-card-home [homeContents]="content.home[4]"></app-content-card-home>
+          <app-phone-section [homeContents]="language.contents.home[4]"></app-phone-section>
 
         </div>
 
         <div class="position-relative">
-          <app-content-card-home [homeContents]="content.home[5]"></app-content-card-home>
+          <app-technology-section [homeContents]="language.contents.home[5]"></app-technology-section>
 
           <svg id="section-divider-bottom" class="" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1440 197" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.1" d="M0 0V52.5C0 52.5 297 197 720 197C1143 197 1440 50 1440 50V0H0Z" fill="#5751FF"></path>
@@ -49,15 +49,15 @@ import { LanguageService } from 'src/app/shared/services/language.service';
         </div>
 
         <div>
-          <app-content-card-home [homeContents]="content.home[6]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[6]"></app-content-card-home>
         </div>
 
         <div>
-          <app-content-card-home [homeContents]="content.home[7]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[7]"></app-content-card-home>
         </div>
 
         <div>
-          <app-content-card-home [homeContents]="content.home[8]"></app-content-card-home>
+          <app-content-card-home [homeContents]="language.contents.home[8]"></app-content-card-home>
         </div>
       </div>
 
@@ -81,17 +81,13 @@ import { LanguageService } from 'src/app/shared/services/language.service';
     }
 
     #section-divider {
-     
         position: absolute;
-        top : -11.3%;
-
+        top : -11.6%;
     }
 
     #section-divider-bottom {
-
         position: absolute;
-        bottom: -24.2%;
-
+        bottom: -19.7%;
     }
 
    
@@ -106,8 +102,7 @@ export class HomeComponent implements OnInit {
   constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
-    this.languageService.languagesUpdate$.subscribe(item => { this.languages = item
-    });
+    this.languageService.languagesUpdate$.subscribe(item =>  this.languages = item);
   }
 
 }

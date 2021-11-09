@@ -5,7 +5,7 @@ export const HOMECONTENTI:IHomeE[] = [
     {
         languageType: LanguageType.ITALIAN,
         showLanguage: true,
-        contents: [
+        contents: 
             {
                 home:  [
                     {
@@ -232,25 +232,285 @@ export const HOMECONTENTI:IHomeE[] = [
                         buttonLabel: 'Leggi le domande frequenti',
                     },
                 ],
-                graphics: [
-
-                ],
+                graphics: {
+                    title: 'Grafica',
+                    subtitle: 'Risorse grafiche ufficiali disponibili per il download',
+                    buttonLabel: 'Scarica',
+                    img: 'https://www.immuni.italia.it/press-illustration.8a70a8d38a187acb5ff2.png'
+                },
                 number: [
 
                 ],
-                faq: [
+                faq: 
+                    {
+                        search: {
+                            title: 'Hai qualche domanda?',
+                            searchLabel: 'Cerca argomento'
+                        },
+                        questions: [
+                            {
+                                question: `Cos'è Immuni`,
+                                answer: `Immuni è un’app creata per aiutarci a combattere le epidemie, a partire da quella del Covid-19.
+                                Grazie anche alla funzionalità di contact tracing, quando un utente scopre di essere positivo al virus, Immuni gli consente di allertare in modo anonimo le persone con cui è stato a stretto contatto e che potrebbe quindi aver contagiato. Venendo informate tempestivamente (potenzialmente ancor prima di sviluppare i sintomi del Covid-19),
+                                 queste persone possono contattare il loro medico di medicina generale per approfondire la loro situazione clinica. Possono inoltre evitare di contagiare altri, contribuendo a ridurre la diffusione del coronavirus.`
+                            },
+                            {
+                                question: `Come funziona il sistema di contact tracing di Immuni?`,
+                                answer: `Immuni avverte gli utenti che sono stati a stretto contatto con una persona risultata poi positiva inviando loro un messaggio di allerta che include una serie di consigli su come affrontare la situazione.
 
-                ],
+                                Immuni riesce a determinare che è avvenuto un contatto a rischio fra due utenti senza sapere chi siano i due utenti o dove si siano incontrati. L’app non raccoglie dati che permettono di risalire all’identità di chi la usa. Non chiede, né è in grado di ottenere, dati sensibili come nome, cognome, data di nascita, indirizzo, numero di telefono o indirizzo e-mail. Inoltre, per determinare il contatto, Immuni sfrutta la tecnologia Bluetooth Low Energy e non utilizza dati di geolocalizzazione di alcun genere, inclusi quelli del GPS.
+                                
+                                Ecco un esempio semplificato di come funziona il sistema di contact tracing di Immuni. Consideriamo Alice e Marco, due ipotetici utenti. Quando è installata sui loro smartphone, Immuni emette un segnale Bluetooth che include un codice casuale. Quando Alice si avvicina a Marco, i loro smartphone si scambiano questi codici e li registrano nella propria memoria, tenendo così traccia di quel contatto. Registrano anche quanto è durato il contatto e la potenza del segnale ricevuto, indicatore approssimativo della distanza tra i due smartphone.
+                                
+                                I codici sono generati casualmente e non contengono alcuna informazione sul dispositivo o l’utente. Inoltre, cambiano diverse volte ogni ora, in modo da proteggere ulteriormente la privacy. Non è in alcun modo possibile risalire all’identità dell’utente a partire dai suoi codici casuali.
+                                
+                                Supponiamo che, successivamente, Marco risulti positivo al coronavirus. Con l’aiuto dell’operatore sanitario che gli ha comunicato l’esito del test, Marco potrà segnalare la sua positività a Immuni, condividendo i suoi codici casuali e allertando le persone con cui è stato a stretto contatto.
+                                
+                                Immuni scarica periodicamente i codici casuali condivisi dagli utenti che sono risultati positivi al virus. Così facendo può controllare se c’è una corrispondenza tra questi codici e quelli registrati nei giorni precedenti. Nel caso del nostro esempio, l’app di Alice troverà il codice casuale di Marco, verificherà se la durata e la distanza del contatto siano state tali da poterlo considerare a rischio e, se questo è il caso, avvertirà Alice.`
+                            },
+                            {
+                                question: `L'app traccia i miei spostamenti?`,
+                                answer: `No. Immuni non è in grado di sapere dove vai né chi incontri. Il sistema di contact tracing sfrutta la tecnologia Bluetooth Low Energy e non raccoglie dati di geolocalizzazione di alcun genere, inclusi quelli del GPS.`
+                            },
+                            {
+                                question: `Come viene tutelata la mia privacy?`,
+                                answer: `Nello sviluppo di Immuni è stata dedicata grande attenzione alla tutela della privacy. Molte misure sono state adottate per proteggerla, eccone alcune:
+                                • L’app non raccoglie dati che permettono di risalire alla tua identità. Non chiede, né è in grado di ottenere, il tuo nome, cognome, data di nascita, indirizzo, numero di telefono o e-mail.
+                                • I tuoi spostamenti non sono tracciati né tracciabili in alcun modo.
+                                • I codici casuali che gli smartphone si scambiano tramite Bluetooth non contengono né informazioni sul tuo dispositivo, né tanto meno su di te.
+                                • Per maggior tutela della tua privacy questi codici casuali cambiano numerose volte ogni ora.
+                                • I dati salvati sul tuo smartphone e le connessioni tra l’app e il server sono cifrati.
+                                • Tutti i dati salvati sul dispositivo o sul server saranno cancellati quando non più necessari e in ogni caso prima del 31 dicembre 2020.
+                                • I tuoi dati sono raccolti dal Ministero della Salute e verranno usati solo per contenere l’epidemia del Covid-19 o ai fini della ricerca scientifica.
+                                • I dati sono salvati su server in Italia e gestiti da soggetti pubblici.`
+                            },
+                            {
+                                question: `Il codice è open source?`,
+                                answer: `Sì, il codice è open source e disponibile su GitHub. La licenza è la GNU Affero General Public License version 3.`
+                            },
+                            {
+                                question: `Perchè è importante scaricare Immuni?`,
+                                answer: `Con Immuni abbiamo un’arma in più per limitare la diffusione del coronavirus. Più persone la scaricano, più quest’arma diventa efficace.`
+                            },
+                            {
+                                question: `Cosa succede se l'app viene utilizzata da un numero limitato di persone?`,
+                                answer: `Anche se la diffusione di Immuni fosse limitata, può comunque contribuire a salvare vite e a contenere il virus, soprattutto se affiancata ad altre misure come il distanziamento sociale e il tracciamento di contatti manuale. Immuni ha già avvertito numerose persone di contatti a rischio con utenti poi risultati positivi. Grazie a questa informazione, queste persone hanno avuto la possibilità di spezzare la catena dei contagi, contribuendo a limitare la diffusione del virus e a salvare vite.`
+                            },
+                            {
+                                question: `Come posso controllare se sto usando l'app in modo corretto?`,
+                                answer: `Apri l’app e controlla che nella sezione Home ci sia scritto “Servizio attivo”. In questo caso non devi fare altro, Immuni sta già funzionando correttamente. In caso contrario, premi sul tasto “Riattiva Immuni” e segui le istruzioni per ripristinare il funzionamento.
+
+                                Qualche altro consiglio importante per assicurarti che Immuni sia davvero efficace:
+                                • Quando esci di casa, porta sempre con te lo smartphone sul quale hai installato l’app.
+                                • Non disabilitare il Bluetooth.
+                                • Non disinstallare l’app.
+                                • Quando Immuni ti manda una notifica, leggila, apri l’app e segui le indicazioni fornite. Per esempio, se l’app ti chiede di fare un aggiornamento, non rimandare e scarica la versione aggiornata.
+                                • Se ti arriva la notifica di un contatto a rischio, segui le indicazioni e chiama immediatamente il tuo medico di famiglia.`
+                            },
+                            {
+                                question: `L'app fa diagnosi mediche o dà consigli medici?`,
+                                answer: `No: Immuni non fa e non può fare diagnosi. Sulla base dello storico della tua esposizione a persone potenzialmente contagiose, Immuni fornisce alcune raccomandazioni su come comportarsi. Ma l’app non è un dispositivo medico e non può in alcun caso sostituire un medico.`
+                            },
+                            {
+                                question: `Dove posso scaricare l'app Immuni? Quali dispositivi e sistemi operativi sono supportati?`,
+                                answer: `A seconda del tuo smartphone puoi scaricare Immuni da App Store, AppGallery o Google Play. Verifica qui sotto se il tuo smartphone supporta Immuni.
+
+                                → App Store
+                                Il tuo iPhone deve avere una versione di iOS pari o superiore alla 13.5. I modelli supportati sono: 11, 11 Pro, 11 Pro Max, Xr, Xs, Xs Max, X, 8, 8 Plus, 7, 7 Plus, 6s, 6s Plus, SE. Aggiorna iOS all’ultima versione disponibile prima di effettuare il download di Immuni.
+                                
+                                → Google Play
+                                Il tuo smartphone Android deve soddisfare tutti e tre i seguenti requisiti:
+                                • Bluetooth Low Energy
+                                • Android versione 6 (Marshmallow, API 23) o superiore
+                                • Google Play Services versione 20.18.13 o superiore
+                                
+                                → AppGallery
+                                • Huawei smartphone supportati (MATE 40 PRO, P Smart 2021, P40 Pro+, P Smart S, P40 Lite 5G, Y5p, Y6p, P40 Pro, P40, P40 Lite E, Mate Xs, P40 Lite, Mate30 Pro o modelli più recenti)
+                                • HMS core 5.1.0.300 o superiore
+                                
+                                Aggiorna Android e Google Play Services, HMS Core all’ultima versione prima di effettuare il download di Immuni.`
+                            },
+                            {
+                                question: `Le istruzioni fornite dall'app sono attendibili?`,
+                                answer: `Le raccomandazioni fornite dall’app dipendono dalla durata della tua esposizione a utenti potenzialmente contagiosi e dalla distanza fra il tuo smartphone e quello di questi utenti durante l’esposizione.
+
+                                Si tratta di un numero limitato di informazioni, peraltro mai perfette, in quanto il segnale Bluetooth Low Energy è influenzato da vari fattori di disturbo. Quindi, la valutazione non sarà sempre impeccabile. Per esempio, se l’app ti raccomanda di isolarti, non significa che sicuramente hai il Covid-19. Significa piuttosto che, sulla base delle informazioni a disposizione dell’app, l’isolamento è la cosa più sicura da fare per te e per chi ti sta accanto.
+                                
+                                È quindi importante che tu segua le indicazioni fornite dall’app, per il bene tuo, dei tuoi cari e della comunità. Non esitare a consultare il tuo medico di medicina generale in caso l’app ti avverta di un contatto a rischio.`
+                            },
+                            {
+                                question: `Il mio smartphone  non supporta Immuni perchè? Cosa posso fare a riguardo?`,
+                                answer: `Immuni sfrutta il sistema per le notifiche di esposizione sviluppato da Apple, Google e Huawei. Si tratta di una tecnologia condivisa a livello internazionale (Germania, Giappone, Olanda e decine di altri paesi al mondo ne fanno uso) che permette all’app di funzionare al meglio sulla maggioranza dei dispositivi. A causa di limiti tecnici, questa tecnologia non è disponibile su versioni precedenti di iOS, Android e Google Play Services. Se le cose dovessero cambiare, ne daremo immediata comunicazione.`
+                            },
+                            {
+                                question: `L'app fa scaricare la batteria del mio smartphone più velocemente?`,
+                                answer: `Non dovresti notare differenze nella durata della tua batteria. Immuni infatti usa il Bluetooth Low Energy, una tecnologia a basso consumo energetico. È la stessa tecnologia che tiene le cuffie senza fili costantemente connesse agli smartphone. L’impatto sulla batteria è minimo e l’utilizzo dell’app non causa surriscaldamenti o altri fenomeni inusuali.`
+                            },
+                            {
+                                question: ``,
+                                answer: `Devi avere almeno 14 anni per usare Immuni. Se hai almeno 14 anni ma meno di 18, per usare l'app devi avere il permesso di almeno uno dei tuoi genitori o di chi esercita la tua rappresentanza legale e avvisarli immediatamente nel caso dovessi ricevere la notifica di allerta di essere stato a contatto stretto con una persona poi risultata positiva al Covid-19.`
+                            },
+                            {
+                                question: ``,
+                                answer: `No. Con Immuni non crei un profilo come in tante altre app. Pertanto, se installi l’app su un nuovo dispositivo, non c’è modo per Immuni di riconoscere che sei sempre tu.`
+                            },
+                            {
+                                question: ``,
+                                answer: `Sì. Immuni è l’app di contact tracing del Governo Italiano, nata dalla collaborazione tra Presidenza del Consiglio dei Ministri, Ministro della Salute, Ministro per l’Innovazione Tecnologica e la Digitalizzazione, Regioni, Commissario straordinario per l’emergenza Covid-19 e le società pubbliche Sogei e PagoPa.
+
+                                Per Immuni, il governo italiano si avvale di una licenza perpetua e irrevocabile su tutto il codice, le grafiche, i testi e la documentazione concessa a titolo gratuito da Bending Spoons S.p.A. Bending Spoons S.p.A. ha continuato a fornire un servizio di documentazione, design e sviluppo software, sempre a titolo completamente gratuito e senza autorità decisionale o accesso ai dati degli utenti, fino al 13 ottobre 2020.
+                                
+                                Nello sviluppare il sistema sono state seguite le indicazioni del Garante per la protezione dei dati personali, riponendo massima attenzione alla privacy degli utenti.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `No. Immuni è un’app completamente gratuita.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Sì, il download e l’uso di Immuni avvengono su base volontaria.
+
+                                Immuni è uno strumento importante nella lotta all’epidemia del Covid-19 e più si diffonde, più è efficace. Ti consigliamo quindi di installarla e di incoraggiare colleghi, parenti e amici a fare lo stesso.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Se Immuni ha rilevato un contatto a rischio, significa che nei giorni scorsi sei stato a stretto contatto con una persona positiva al Covid-19 per più di 15 minuti. Potresti quindi avere contratto il virus, senza però manifestare i sintomi. Fai la tua parte seguendo le raccomandazioni: ridurrai così il rischio per te e i tuoi cari ed eviterai di contagiare altri.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Con Immuni la tua privacy è tutelata. Nessuna di queste informazioni è a disposizione di Immuni.
+
+                                Il sistema è basato sulla tecnologia Bluetooth Low Energy, non registra o condivide informazioni su di te o i tuoi contatti e non utilizza dati di geolocalizzazione di alcun genere, inclusi quelli del GPS. L’app non può quindi determinare né dove sei stato, né con chi.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `No. L’app non raccoglie alcun dato che consentirebbe di risalire alla tua identità. Per esempio, non ti chiede e non è in grado di ottenere il tuo nome, cognome, data di nascita, indirizzo, numero di telefono o indirizzo email.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Immuni agisce in background. Questo significa che continua a funzionare anche se la chiudi. L’importante è che tu la tenga installata, che il tuo smartphone sia acceso e che il Bluetooth sia attivo. Puoi usare tranquillamente altre app, come fai di solito.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Sì, il Bluetooth deve essere sempre attivo per rilevare i contatti con altri utenti.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Sì, l’importante è lasciare attivo il Bluetooth. In questo modo, Immuni continuerà a funzionare come previsto. Ricordati inoltre di connettere a Internet il tuo smartphone almeno una volta al giorno, per permettere a Immuni di verificare se hai avuto contatti a rischio.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Molto poco. Ogni giorno, l’app scarica i codici casuali degli utenti risultati positivi al Covid-19 per controllare se sei stato a stretto contatto con uno di loro ed eventualmente avvertirti. Questa operazione consuma al massimo qualche megabyte di traffico dati al giorno, più o meno come se caricassi una pagina di un sito web.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `È importante aggiornare Immuni quando è disponibile una nuova versione: gli aggiornamenti migliorano l’efficacia dell’app e correggono potenziali difetti. L’app ti invia una notifica solo se ritiene sia necessario effettuare l’aggiornamento, ma sta a te scegliere se farlo o meno.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Immuni per funzionare non richiede una connessione a Internet sempre attiva. L’app ha però bisogno di connettersi almeno una volta al giorno per scaricare le informazioni necessarie per verificare se sei stato esposto a utenti potenzialmente contagiosi. Pertanto, assicurati di connettere il tuo smartphone a Internet almeno una volta al giorno.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `L’unico scopo di Immuni è aiutare a far fronte all’epidemia. Il progetto non ha fini di lucro e in nessun caso i tuoi dati verranno venduti o usati per qualsivoglia scopo commerciale, inclusa la profilazione a fini pubblicitari.
+
+                                I dati sono sotto la responsabilità del Ministero della Salute. L’eventuale condivisione delle informazioni rilevate, rigorosamente in forma anonima e aggregata, potrà avvenire per favorire la ricerca scientifica.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Le lingue attualmente supportate dall’app sono l’italiano, l’inglese, il tedesco, il francese e lo spagnolo. L’app usa la stessa lingua che hai impostato sul tuo smartphone, se disponibile, altrimenti l’inglese. Perciò per cambiare la lingua dell’app dovrai cambiare la lingua del tuo dispositivo.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Puoi scaricare Immuni da tutto il mondo.
+
+                                Per motivi di sicurezza, dovrai però trovarti in Italia per poter caricare i tuoi dati nel caso in cui risulti positivo al virus. Sui dispositivi iOS, lo scambio di codici casuali viene disattivato se sei all’estero.
+                                
+                                Sempre per motivi di sicurezza, le connessioni al server che permette di scaricare i codici casuali di utenti positivi non sono possibili al di fuori del territorio europeo.
+                                
+                                Al momento Immuni rileva solo i contatti con altri utenti di Immuni. A livello europeo si sta lavorando per permettere alle diverse app nazionali di contact tracing, tra cui Immuni, di comunicare tra loro. Questo permetterà di estendere la funzionalità di contact tracing anche agli stranieri che viaggiano in Italia e agli italiani che viaggiano all’estero, senza la necessità di scaricare ulteriori app.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Il codice monouso è una sequenza alfanumerica di dieci caratteri che viene utilizzata soltanto in caso di positività al virus SARS-CoV-2 e che non identifica in alcun modo l’utente dell’app Immuni.
+                                Se sei risultato positivo/a al virus, puoi decidere di caricare sul server di Immuni i dati necessari ad avvertire, in maniera anonima, le persone che sono state a stretto contatto con te da 2 giorni prima dei sintomi (o del tampone se sei asintomatico) e fino ad un massimo di 14 giorni. Per farlo devi dettare il codice monouso che si trova alla voce “segnala positività” di Immuni (all’interno del menù “Impostazioni”) all’operatore sanitario che ti ha comunicato l’esito del tampone, oppure all’operatore telefonico del call center 800 91 24 91 se hai ricevuto il CUN (Codice Univoco Nazionale).
+                                Dopo che l’operatore avrà validato il codice monouso, potrai procedere al caricamento del dato di positività. Questa operazione è anche detta “sblocco” di Immuni.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Puoi caricare i tuoi dati soltanto se risulti positivo al coronavirus e se hai effettuato un test tramite tampone molecolare. L’operazione è su base volontaria e permette a Immuni di avvertire le persone con cui sei stato in contatto stretto da 2 giorni prima dei sintomi (o del tampone se sei asintomatico) e fino ad un massimo di 14 giorni.
+                                Questa operazione può essere svolta con il supporto dell’operatore sanitario che ti ha comunicato l’esito positivo del tampone, oppure se hai ricevuto il CUN col supporto dell’operatore del call center 800 91 24 91 o in autonomia con la specifica funzione a disposizione nell'APP.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `L’operatore sanitario del servizio di prevenzione che ti ha comunicato l’esito del tampone o l’operatore telefonico del call center di Immuni ti chiederà di entrare nella sezione “Impostazioni” e di scegliere “Segnala positività”.
+                                Immuni ti mostrerà un codice monouso, una sequenza di dieci caratteri generati in modo casuale.
+                                Comunica questo codice all’operatore, che ti darà l’autorizzazione a proseguire
+                                Fai clic su “Prosegui”\nImmuni ti mostrerà un riepilogo dei dati che saranno caricati
+                                Facendo clic su “Carica i dati”, l’app caricherà i tuoi dati
+                                Ti verrà infine chiesto il permesso per accedere ai codici casuali salvati sul tuo dispositivo\nL’app ti mostrerà un messaggio di conferma una volta completato il caricamento.
+                                `
+                            },
+                            {
+                                question: `?`,
+                                answer: `Se Immuni rileva che sei stato esposto ad un possibile contagio, ti arriverà una notifica. Segui le raccomandazioni che troverai all’interno dell’app, a partire dal contattare il tuo medico di medicina generale per i dovuti approfondimenti. Anche se non sei obbligato a farlo, ti consigliamo di seguire le indicazioni che ti verranno date per proteggere la tua salute e quella degli altri, in particolare di quelli che ti sono più vicini.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Immuni ti avverte di un contatto a rischio soltanto se ti sei trovato per almeno 15 minuti a breve distanza da una persona positiva al Covid-19. È anche necessario che la persona abbia Immuni sul suo smartphone e che scelga di segnalare la sua positività quando le viene comunicato l’esito del tampone. In caso contrario nessuna notifica può essere inviata.
+
+                                Immuni utilizza la potenza del segnale Bluetooth per ricavare una stima della distanza a cui è avvenuto il contatto. I parametri della stima sono stati scelti per avvicinarsi il più possibile alle direttive del Ministero della Salute, che considerano a rischio un contatto avvenuto a una distanza inferiore ai due metri. Numerosi esperimenti di calibrazione sono stati effettuati per rendere la stima più precisa possibile, ma può comunque presentare un margine di errore. Inoltre non considera eventuali barriere o dispositivi di protezione presenti. La ricezione di una notifica di esposizione è in ogni caso impossibile senza una prolungata vicinanza fisica ad una persona positiva al Covid-19.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `È probabile che tu non abbia completato il processo di aggiornamento di iOS. Per aggiornare iOS devi compiere due operazioni:
+                                1. Scaricare l’ultima versione
+                                2. Effettuare l’installazione
+                                
+                                Per scaricare l’ultima versione di iOS devi essere connesso al Wi-Fi. In caso contrario, il bottone per avviare lo scaricamento sarà disabilitato. Vai in Impostazioni > Generali > Aggiornamento Software. Se hai effettuato lo scaricamento dell'ultima versione di iOS ma non l'installazione, premi “Installa Ora”. Per verificare che l’installazione sia avvenuta correttamente, vai in Impostazioni > Generali > Info. La voce “Versione Software” deve mostrare una versione 13.5 o superiore.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Immuni è completamente gratuita e la puoi scaricare senza indicare un metodo di pagamento.
+
+                                Se Apple o Google ti richiedono una carta di credito è probabile che tu non abbia ancora completato la configurazione del tuo account. Per scaricare gratuitamente Immuni, procedi così:
+                                • Su App Store, scegli l’opzione “Nessuno” tra i metodi di pagamento proposti.
+                                • Su Google Play, scegli l’opzione “Salta” alla richiesta di un metodo di pagamento.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `No, Immuni non ha assolutamente accesso ad alcun dato di geolocalizzazione. Sugli smartphone Android, a causa di una limitazione del sistema operativo, il servizio di geolocalizzazione deve essere abilitato per permettere al sistema di notifiche di esposizione di Google di cercare segnali Bluetooth Low Energy e salvare i codici casuali degli smartphone degli utenti che si trovano intorno a te. Tuttavia, come puoi vedere dalla lista di permessi richiesti da Immuni, l'app non è autorizzata ad accedere ad alcun dato di geolocalizzazione (inclusi i dati del GPS) e non può quindi sapere dove ti trovi.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Si tratta di un difetto del sistema operativo che Apple ha già risolto. Aggiorna il tuo sistema operativo iOS alla versione 13.6 o successiva per evitare che il messaggio compaia di nuovo.`
+                            },
+                            {
+                                question: `?`,
+                                answer: `Sì, Immuni ti permette di disattivare temporaneamente la funzionalità, ad esempio mentre sei al lavoro se sei un operatore sanitario a contatto con pazienti Covid-19. Disabilitando Immuni non verranno registrati i contatti con altri utenti.
+
+                                Per farlo, segui questi passaggi:
+                                • Apri l’app Immuni.
+                                • Scorri verso il basso e tocca l’opzione “Disattiva il servizio” in fondo alla schermata Home.
+                                • Segui le istruzioni.
+                                
+                                Ricordati di riattivare Immuni non appena è possibile:
+                                • Apri l’app Immuni.
+                                • Tocca l’opzione “Riattiva Immuni” nella parte alta della schermata Home.
+                                • Segui le istruzioni.`
+                            },
+                        ]
+                    }
+                ,
                 download: [
 
                 ]
         }
-        ] 
     },
     {
         languageType: LanguageType.ENGLISH,
         showLanguage: false,
-        contents: [
+        contents: 
             {
                 home: [
                     {
@@ -478,25 +738,97 @@ export const HOMECONTENTI:IHomeE[] = [
                     },
             
                 ],
-                graphics: [
-
-                ],
+                graphics: {
+                    title: 'Graphics',
+                    subtitle: 'Official graphic assets available for download',
+                    buttonLabel: 'Download',
+                    img: 'https://www.immuni.italia.it/press-illustration.8a70a8d38a187acb5ff2.png'
+                },
                 number: [
 
                 ],
-                faq: [
-
-                ],
+                faq: 
+                    {
+                        search: {
+                            title: '¿Tienes alguna pregunta?',
+                            searchLabel: 'Buscar tema'
+                        },
+                        questions: [
+                            {
+                                question: '',
+                                answer: ''
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                        ]
+                    },
                 download: [
 
                 ]
             }
-        ]
     },
     {
         languageType: LanguageType.DEUTSCH,
         showLanguage: false,
-        contents: [
+        contents: 
             {
                 home: [
                     {
@@ -723,25 +1055,97 @@ export const HOMECONTENTI:IHomeE[] = [
                         buttonLabel: 'Häufig gestellte Fragen lesen',
                     }
                 ],
-                graphics: [
-
-                ],
+                graphics: {
+                    title: 'Grafik',
+                    subtitle: 'Offizielle Grafikressourcen, die heruntergeladen werden können',
+                    buttonLabel: 'Herunterladen',
+                    img: 'https://www.immuni.italia.it/press-illustration.8a70a8d38a187acb5ff2.png'
+                },
                 number: [
 
                 ],
-                faq: [
-
-                ],
+                faq: 
+                    {
+                        search: {
+                            title: 'Do you have any questions?',
+                            searchLabel: 'Search topic'
+                        },
+                        questions: [
+                            {
+                                question: '',
+                                answer: ''
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                        ]
+                    },
                 download: [
 
                 ]
             }
-        ]
     },
     {
         languageType: LanguageType.FRANCAIS,
         showLanguage: false,
-        contents: [
+        contents: 
             {
                 home: [
                     {
@@ -968,25 +1372,97 @@ export const HOMECONTENTI:IHomeE[] = [
                         buttonLabel: 'Consultez la section FAQ',
                     }
                 ],
-                graphics: [
-
-                ],
+                graphics: {
+                    title: 'Graphisme',
+                    subtitle: 'Ressources graphiques officielles à télécharger',
+                    buttonLabel: 'Télécharger',
+                    img: 'https://www.immuni.italia.it/press-illustration.8a70a8d38a187acb5ff2.png'
+                },
                 number: [
 
                 ],
-                faq: [
-
-                ],
+                faq: 
+                    {
+                        search: {
+                            title: 'Haben Sie Fragen?',
+                            searchLabel: 'Thema suchen...'
+                        },
+                        questions: [
+                            {
+                                question: '',
+                                answer: ''
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                        ]
+                    },
                 download: [
 
                 ]
             }
-        ]
     },
     {
         languageType: LanguageType.ESPANOL,
         showLanguage: false,
-        contents: [
+        contents: 
             {
                 home: [
                     {
@@ -1213,19 +1689,91 @@ export const HOMECONTENTI:IHomeE[] = [
                         buttonLabel: 'Lee las preguntas frecuentes',
                     }
                 ],
-                graphics: [
-
-                ],
+                graphics: {
+                    title: 'Graficos',
+                    subtitle: 'Recursos gráficos oficiales disponibles para descargar',
+                    buttonLabel: 'Descargar',
+                    img: 'https://www.immuni.italia.it/press-illustration.8a70a8d38a187acb5ff2.png'
+                },
                 number: [
 
                 ],
-                faq: [
-
-                ],
+                faq: 
+                    {
+                        search: {
+                            title: 'Vous avez des questions?',
+                            searchLabel: 'Rechercher un thème'
+                        },
+                        questions: [
+                            {
+                                question: '',
+                                answer: ''
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                            {
+                                question: ``,
+                                answer: ``
+                            },
+                        ]
+                    },
                 download: [
 
                 ]
             }
-        ]
     },
 ]
